@@ -3,7 +3,7 @@ import { Card, Form, Button, Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlusSquare, faSave, faUndo, faList, faEdit } from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios'
-import MyToast from "./MyToast";
+import MyToast from './MyToast'
 
 class Book extends Component {
     constructor(props) {
@@ -90,7 +90,7 @@ class Book extends Component {
         };
         const headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        fetch("http://localhost:8081/api/v1/books", {
+        fetch("http://localhost:8085/api/v1/books", {
             method: 'PUT',
             body: JSON.stringify(book),
             headers

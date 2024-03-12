@@ -46,17 +46,17 @@ function AppAppBar({ mode, toggleColorMode }) {
 
     const navigateToFiction = () => {
 
-        navigate('/fiction');
+        navigate('/update');
     };
 
     const navigateToNonFiction = () => {
 
-        navigate('/nonfiction');
+        navigate('/admin');
     };
 
     const navigateToEducational = () => {
 
-        navigate('/educational');
+        navigate('/books');
     };
 
 
@@ -137,7 +137,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                                     sx={{ py: '6px', px: '12px' }}
                                 >
                                     <Typography variant="body2" color="text.primary">
-                                        Fiction
+                                        Update
                                     </Typography>
                                 </MenuItem>
                                 <MenuItem
@@ -146,7 +146,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                                     sx={{ py: '6px', px: '12px' }}
                                 >
                                     <Typography variant="body2" color="text.primary">
-                                        Non-Fiction
+                                        Admin
                                     </Typography>
                                 </MenuItem>
                                 <MenuItem
@@ -155,7 +155,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                                     sx={{ py: '6px', px: '12px' }}
                                 >
                                     <Typography variant="body2" color="text.primary">
-                                        Educational
+                                        Books
                                     </Typography>
                                 </MenuItem>
 

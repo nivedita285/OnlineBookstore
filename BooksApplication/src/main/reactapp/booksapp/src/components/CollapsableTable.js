@@ -6,12 +6,16 @@ import {Link} from 'react-router-dom'
 import axios from 'axios';
 import MyToast from './MyToast'
 import AppAppBar from "./AppAppBar";
+import Collapse from '@mui/material/Collapse';
+import AddBook from "./AddBook";
+
 class CollapsableTable extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            books: []
+            books: [],
+            cart: []
         }
     }
 
@@ -43,6 +47,13 @@ class CollapsableTable extends Component {
                     this.setState({"show":false});
                 }
             });
+    };
+
+
+    addToCart = (book) => {
+        const cart = [...this.state.cart];
+        cart.push(book);
+        this.setState({ cart });
     };
 
     render() {
@@ -85,15 +96,16 @@ class CollapsableTable extends Component {
             <div>
             <AppAppBar/>
             <div style={{marginTop:'80px'}}>
-                <div style={{ display: this.state.show ? "block" : "none" }}>
-                    <MyToast show={this.state.show} message={"Book deleted successfully"} type={"danger"} />
-                </div>
-                <Card className={"border border-dark bg-dark text-white"}>
+                {/*<div style={{ display: this.state.show ? "block" : "none" }}>*/}
+                {/*    <MyToast show={this.state.show} message={"Book deleted successfully"} type={"danger"} />*/}
+                {/*</div>*/}
+                {/*<Card className={"border border-dark bg-dark text-white"}>*/}
                     {/*<Card.Body><FontAwesomeIcon icon={faList} /> Book List</Card.Body>*/}
-                    <Card.Body>
+                    {/*<Card.Body>*/}
                         <div style={gridContainerStyle}>
                             {this.state.books.length === 0 ?
-                                <div style={{ textAlign: 'center', gridColumn: '1 / -1' }}>Books Available</div> :
+                                // <div>Books Available None</div> :
+                                <div style={{ textAlign: 'center', gridColumn: '1 / -1' }}>Books Available None</div> :
                                 this.state.books.map((book) => (
                                     <div style={gridItemStyle} key={book.id}>
                                         <div style={bookInfoStyle}>
@@ -111,7 +123,8 @@ class CollapsableTable extends Component {
                                             {/*    <Link to={"edit/" + book.id} className="btn btn-sm btn-outline-primary"><FontAwesomeIcon icon={faEdit} /></Link>{' '}*/}
                                             {/*    <Button size="sm" variant="outline-danger" onClick={this.deleteBook.bind(this, book.id)}><FontAwesomeIcon icon={faTrash} /></Button>*/}
                                             {/*</ButtonGroup>*/}
-                                            <Button style={{border: 'none',
+                                            <Button onClick={() => this.addToCart(book)}
+                                                style={{border: 'none',
                                                 outline: 0,
                                                 padding: '12px',
                                                 color: 'white',
@@ -125,8 +138,8 @@ class CollapsableTable extends Component {
                                 ))
                             }
                         </div>
-                    </Card.Body>
-                </Card>
+                    {/*</Card.Body>*/}
+                {/*</Card>*/}
             </div>
             </div>
         )

@@ -9,7 +9,7 @@ export default function Product(props) {
             <p className="price">{props.price}</p>
             <p>{props.description}</p>
             <p className="author">{props.author}</p>
-            <a href="#">more details...</a>
+            {/*<a href="#">more details...</a>*/}
             <p>
                 <button>Add to Cart</button>
             </p>
