@@ -59,6 +59,11 @@ function AppAppBar({ mode, toggleColorMode }) {
         navigate('/books');
     };
 
+    const navigateToFaq = () => {
+
+        navigate('/faq');
+    };
+
 
     const navigateToCheckout = () => {
 
@@ -132,14 +137,14 @@ function AppAppBar({ mode, toggleColorMode }) {
                                         Home
                                     </Typography>
                                 </MenuItem>
-                                <MenuItem
-                                    onClick={() => navigateToFiction()}
-                                    sx={{ py: '6px', px: '12px' }}
-                                >
-                                    <Typography variant="body2" color="text.primary">
-                                        Update
-                                    </Typography>
-                                </MenuItem>
+                                {/*<MenuItem*/}
+                                {/*    onClick={() => navigateToFiction()}*/}
+                                {/*    sx={{ py: '6px', px: '12px' }}*/}
+                                {/*>*/}
+                                {/*    <Typography variant="body2" color="text.primary">*/}
+                                {/*        Update*/}
+                                {/*    </Typography>*/}
+                                {/*</MenuItem>*/}
                                 <MenuItem
                                     onClick={() => navigateToNonFiction()}
 
@@ -160,7 +165,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                                 </MenuItem>
 
                                 <MenuItem
-                                    onClick={() => scrollToSection('faq')}
+                                    onClick={() => navigateToFaq()}
                                     sx={{ py: '6px', px: '12px' }}
                                 >
                                     <Typography variant="body2" color="text.primary">
@@ -179,9 +184,9 @@ function AppAppBar({ mode, toggleColorMode }) {
                         >
 
 
-                            <Button variant="outlined" startIcon={<ShoppingCartIcon />} onClick={navigateToCheckout}>
-                                Checkout
-                            </Button>
+                            {/*<Button variant="outlined" startIcon={<ShoppingCartIcon />} onClick={navigateToCheckout}>*/}
+                            {/*    Checkout*/}
+                            {/*</Button>*/}
 
                             <Button
                                 color="primary"

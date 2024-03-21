@@ -12,6 +12,10 @@ import Checkout from "./components/Checkout";
 import SignInSide from "./components/SignInSide";
 import SignUp from "./components/SignUp";
 import UpdateBook from "./components/UpdateBook";
+import Login from './user/Login';
+import Signin from './user/Signin';
+import AddAndUpdate from "./components/AddAndUpdate";
+import FAQ from './components/FAQ';
 
 function App() {
   return (
@@ -20,18 +24,21 @@ function App() {
               <AppAppBar/>
               <Routes>
                   <Route path="/home" element={<Home/>}/>
-                  <Route path="/update" element={<UpdateBook/>}/>
+                  {/*<Route path="/update" element={<UpdateBook/>}/>*/}
                   <Route path='/admin' element={<BookList/>}/>
                   <Route path="/books" element={<CollapsibleTable/>}/>
-                  <Route path="/checkout" element={<Checkout/>}/>
-                  <Route path="/signin" element={<SignInSide/>}/>
-                  <Route path="/signup" element={<SignUp/>}/>
+                  <Route path="/faq" element={<FAQ/>}/>
+                  {/*<Route path="/checkout" element={<Checkout/>}/>*/}
+                  <Route path="/signin" element={<Signin/>}/>
+                  <Route path="/signup" element={<Login/>}/>
               </Routes>
           </Router>
           <div>
               <Footer/>
           </div>
-
+            <div>
+                <AddAndUpdate/>
+            </div>
 
       </div>
   );

@@ -59,14 +59,14 @@ class UpdateBook extends Component {
         const { bookid, title, author, isbnNumber, language, price, coverPhotoURL } = bookData;
         const existingBookIndex = books.findIndex(book => book.bookid === bookid);
 
-        if (existingBookIndex !== -1) {
+
             // If book ID already exists, update fields of the existing book
             const updatedBooks = [...books];
             updatedBooks[existingBookIndex] = { ...updatedBooks[existingBookIndex], title, author, isbnNumber, language, price, coverPhotoURL };
             this.setState({ books: updatedBooks });
 
             // Assuming updating fields requires a PATCH request
-            fetch(`http://localhost:8085/api/v1/books/${bookid}`, {
+            fetch("http://localhost:8085/api/v1/books/"+bookid, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'
@@ -75,6 +75,7 @@ class UpdateBook extends Component {
             })
                 .then(response => {
                     if (response.ok) {
+                        console.log(response);
                         this.setState({ "show": true });
                         setTimeout(() => this.setState({ "show": false }), 3000);
                     } else {
@@ -84,12 +85,35 @@ class UpdateBook extends Component {
                 .catch(error => {
                     // Handle error if fetch fails
                 });
-        } else {
-            console.log("Error: Book ID does not exist.");
-        }
+
     };
 
-
+    // updateBook = event => {
+    //
+    //     const book = {
+    //         id: this.state.id,
+    //         title: this.state.title,
+    //         author: this.state.author,
+    //         isbnNumber: this.state.isbnNumber,
+    //         coverPhotoURL: this.state.coverPhotoURL,
+    //         language: this.state.language,
+    //         price: this.state.price
+    //     };
+    //
+    //     axios.put("http://localhost:8085/api/v1/books", book)
+    //         .then(response => {
+    //             if (response.data != null) {
+    //                 this.setState({ "show": true, "method": "put" });
+    //                 this.setState(this.initialState);
+    //                 // alert('Book Saved Successfully');
+    //                 setTimeout(() => this.setState({ "show": false }), 3000);
+    //                 setTimeout(() => this.bookList(), 500);
+    //
+    //             } else {
+    //                 this.setState({ 'show': false });
+    //             }
+    //         })
+    // }
 
 
     render() {

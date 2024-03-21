@@ -147,7 +147,10 @@ class BookList extends Component {
         return (
             <div>
                 <AppAppBar/>
-                <div style={{display:'flex',justifyContent:'center'}}><AddBook/></div>
+                <div style={{display:'flex',justifyContent:'center'}}>
+                    <AddBook/>
+                    <UpdateBook/>
+                </div>
                 <div style={{marginTop:'50px'}}>
                     <div style={{ display: this.state.show ? "block" : "none" }}>
                         {/*<MyToast show={this.state.show} message={"Book deleted successfully"} type={"danger"} />*/}

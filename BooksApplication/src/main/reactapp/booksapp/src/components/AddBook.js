@@ -98,10 +98,10 @@ class AddBook extends Component {
                         <Card.Body>
                             <h2>Add New Book</h2>
                             <Form onSubmit={this.handleSubmit}>
-                                <Form.Group controlId="bookid">
-                                    <Form.Label>ID</Form.Label>
-                                    <Form.Control type="text" placeholder="Enter id" value={this.state.bookid} onChange={this.handleInputChange} />
-                                </Form.Group>
+                                {/*<Form.Group controlId="bookid">*/}
+                                {/*    <Form.Label>ID</Form.Label>*/}
+                                {/*    <Form.Control type="text" placeholder="Enter id" value={this.state.bookid} onChange={this.handleInputChange} />*/}
+                                {/*</Form.Group>*/}
                                 <Form.Group controlId="title">
                                     <Form.Label>Title</Form.Label>
                                     <Form.Control type="text" placeholder="Enter title" value={this.state.title} onChange={this.handleInputChange} />
