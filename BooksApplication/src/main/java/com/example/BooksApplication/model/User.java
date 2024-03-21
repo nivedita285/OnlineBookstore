@@ -1,6 +1,10 @@
 package com.example.BooksApplication.model;
 
+import com.example.BooksApplication.domain.Books;
 import jakarta.persistence.*;
+
+import java.util.List;
+
 @Entity
 @Table(name="users")
 public class User {
@@ -53,6 +57,20 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+//    @OneToMany(mappedBy = "user",
+//            cascade = CascadeType.ALL,
+//            fetch = FetchType.EAGER
+//    )
+//    private List<Books> books;
+//
+//    public List<Books> getBooks() {
+//        return books;
+//    }
+//
+//    public void setBooks(List<Books> books) {
+//        this.books = books;
+//    }
 
     @Override
     public String toString() {

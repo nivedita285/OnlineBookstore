@@ -1,10 +1,9 @@
 package com.example.BooksApplication.domain;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.example.BooksApplication.model.User;
+import jakarta.persistence.*;
+
 @Entity
 public class Books {
 
@@ -64,4 +63,15 @@ public class Books {
         this.language = language;
     }
 
+//    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "USER_FK")
+//    private User user;
+//
+//    public User getUser() {
+//        return user;
+//    }
+//
+//    public void setUser(User user) {
+//        this.user = user;
+//    }
 }
